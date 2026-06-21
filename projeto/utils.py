@@ -1,6 +1,18 @@
 # utils.py
 # Funções auxiliares/genéricas usadas em vários módulos.
 
+import os
+
+
+def limpar_tela():
+    """Limpa o terminal (Windows: cls, Linux/Mac: clear)."""
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
+def pausar():
+    """Pausa a execução até o usuário apertar Enter, para dar tempo de ler o resultado."""
+    input("\nPressione Enter para continuar...")
+
 
 def ler_float_seguro(mensagem):
     """

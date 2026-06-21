@@ -19,5 +19,8 @@ def listar_alunos(lista_alunos):
     if not lista_alunos:
         print("Nenhum aluno cadastrado.")
         return False
+    print(f"{'Matrícula':<10} {'Nome':<25} {'Notas'}")
+    print("-" * 55)
     for aluno in lista_alunos:
-        print(f"Nome: {aluno['nome']}, Matrícula: {aluno['matricula']}, Notas: {aluno['notas']}")
+        print(f"{aluno['matricula']:<10} {aluno['nome']:<25} {aluno['notas']}")
+    return True

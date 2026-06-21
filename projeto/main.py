@@ -2,24 +2,32 @@ from aluno import criar_aluno, listar_alunos
 from notas import cadastrar_notas, calcular_media, calcular_media_todos
 from busca import busca_linear, busca_binaria
 from ordenacao import ordenar_por_nome, ordenar_por_nota
-from utils import ler_float_seguro, ler_nome_valido
+from utils import ler_float_seguro, ler_nome_valido, limpar_tela, pausar
+
+
+def exibir_menu():
+    print("=" * 40)
+    print(" SISTEMA ACADÊMICO")
+    print("=" * 40)
+    print("1. Listar alunos")
+    print("2. Cadastrar aluno")
+    print("3. Buscar aluno")
+    print("4. Ordenar alunos")
+    print("5. Cadastrar notas")
+    print("6. Calcular média")
+    print("7. Relatórios")
+    print("0. Sair")
+    print("=" * 40)
 
 
 def main():
     lista_alunos = []
 
     while True:
-        print("\nMenu:")
-        print("1. Listar alunos")
-        print("2. Cadastrar aluno")
-        print("3. Buscar aluno")
-        print("4. Ordenar alunos")
-        print("5. Cadastrar notas")
-        print("6. Calcular média")
-        print("7. Relatórios")
-        print("0. Sair")
-
+        limpar_tela()
+        exibir_menu()
         opcao = input("Escolha uma opção: ")
+        print("-" * 40)
 
         if opcao == "1":
             listar_alunos(lista_alunos)
@@ -90,6 +98,9 @@ def main():
             break
         else:
             print("Opção inválida.")
+
+        if opcao != "0":
+            pausar()
 
 
 if __name__ == "__main__":
